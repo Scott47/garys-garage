@@ -9,5 +9,9 @@ namespace Garage
         {
             // method definition omitted
         }
+        public override void Drive()
+        {
+            Console.WriteLine("chop chop chop...");
+        }
     }
 }
