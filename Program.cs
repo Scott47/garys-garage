@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Garage
 {
@@ -10,6 +11,56 @@ namespace Garage
             Tesla modelS = new Tesla();
             Cessna mx410 = new Cessna();
             Ram trx1500 = new Ram();
+
+            List<IElectric> electricVehicles = new List<IElectric>()
+            {
+                fxs, modelS
+            };
+
+            Console.WriteLine("Electric Vehicles");
+            foreach (IElectric ev in electricVehicles)
+            {
+                Console.WriteLine($"Current Charge: {ev.CurrentChargePercentage}%");
+            }
+
+            foreach (IElectric ev in electricVehicles)
+            {
+                // This should charge the vehicle to 100%
+                ev.ChargeBattery();
+            }
+
+            foreach (IElectric ev in electricVehicles)
+            {
+                Console.WriteLine($" You vehicle is {ev.CurrentChargePercentage}% charged.");
+            }
+
+            /***********************************************/
+
+            Ram ram = new Ram();
+            Cessna cessna150 = new Cessna();
+
+            List<IGas> gasVehicles = new List<IGas>()
+            {
+                ram, trx1500, cessna150
+              };
+
+            Console.WriteLine("Gas Vehicles");
+            foreach (IGas gv in gasVehicles)
+            {
+                Console.WriteLine($"Current Tank Level: {gv.CurrentTankPercentage}%");
+            }
+
+            foreach (IGas gv in gasVehicles)
+            {
+                // This should completely refuel the gas tank
+                gv.RefuelTank();
+            }
+
+            foreach (IGas gv in gasVehicles)
+            {
+                Console.WriteLine($"You vehicle's gas tank is {gv.CurrentTankPercentage}% full.");
+            }
+
 
             fxs.Drive();
             modelS.Drive();
@@ -27,4 +78,5 @@ namespace Garage
             trx1500.Stop();
         }
     }
+
 }
