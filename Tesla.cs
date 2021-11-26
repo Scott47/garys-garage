@@ -13,5 +13,16 @@ namespace Garage
         {
             Console.WriteLine("Zip musk, zip musk, crash..");
         }
+        public override void Turn(string direction)
+        {
+            base.Turn(direction);
+            Console.WriteLine("and the car behind it is visibly annoyed.");
+        }
+        public override void Stop()
+        {
+            Console.WriteLine("The Tesla stopped in the middle of the street. We got out and left it there.");
+        }
+
     }
 }
+

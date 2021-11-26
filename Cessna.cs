@@ -13,5 +13,11 @@ namespace Garage
         {
             Console.WriteLine("chop chop chop...");
         }
+        public override void Turn(string direction)
+        {
+            base.Turn(direction);
+            Console.WriteLine("and looks like it might be nose-diving.");
+        }
+
     }
 }

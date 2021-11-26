@@ -13,5 +13,11 @@ namespace Garage
         {
             Console.WriteLine("Zippity Zip Zip Zoom...");
         }
+
+        public override void Turn(string direction)
+        {
+            base.Turn(direction);
+            Console.WriteLine("and it's Tokyo Drifting. I didn't think a motorcycle could do that.");
+        }
     }
 }
